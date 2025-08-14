@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.13.4 on win32)" generated="2025-08-14T14:16:49.373454" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Panel Sf" source="c:\Users\sudar\Documents\Orange-HRM\tests\login panel sf.robot">
+<test id="s1-t1" name="TC01 - Valid Login" line="38">
+<kw name="Open Browser To SuperFood Landing Page" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T14:16:49.580747" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7A6F05550&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T14:16:49.580299" elapsed="0.002453"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:16:49.583147" elapsed="0.000406"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:16:49.583762" elapsed="0.000227"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:16:49.584155" elapsed="0.000182"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:16:49.584755" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T14:16:49.584484" elapsed="1.769499"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:16:51.354612" level="INFO">Opening url 'http://panel.uat.superfoodapp.id/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:16:51.354327" elapsed="15.233200"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.587853" elapsed="0.017294"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.605499" elapsed="0.024330"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:06.643692" level="INFO">Current page contains text 'Welcome Back SuperSquad!'.</msg>
+<arg>Welcome Back SuperSquad!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.630188" elapsed="0.013784"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:06.649391" level="INFO">Page title is 'SuperFood'.</msg>
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.644202" elapsed="0.005490"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:16:49.579531" elapsed="17.070384"/>
+</kw>
+<kw name="Input Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:06.651544" level="INFO">Typing text 'hi@superfoodapp.id' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.651158" elapsed="0.106753"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:06.758627" level="INFO">Typing text '5uperF00d!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.758237" elapsed="0.062379"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:06.821224" level="INFO">Clicking button 'css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button'.</msg>
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.820920" elapsed="0.062033"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-08-14T14:17:06.650552" elapsed="0.232635"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${DASHBOARD_URL}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-08-14T14:17:06.883615" elapsed="44.303725"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:51.193601" level="INFO">Current location is 'http://panel.uat.superfoodapp.id/dashboard'.</msg>
+<arg>${DASHBOARD_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:17:51.187955" elapsed="0.005952"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=/html/body/div[1]/div/div[1]/div[2]/div/div[1]/a/img</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T14:17:51.194415" elapsed="0.011321"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T14:17:51.206328" elapsed="2.117667"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:16:49.578340" elapsed="63.746399"/>
+</test>
+<test id="s1-t2" name="TC02 - Invalid Username" line="44">
+<kw name="Open Browser To SuperFood Landing Page" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T14:17:53.327162" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7A6E76D50&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T14:17:53.326747" elapsed="0.000561"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:17:53.327489" elapsed="0.000203"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:17:53.327821" elapsed="0.000165"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:17:53.328104" elapsed="0.000163"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:53.328816" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T14:17:53.328591" elapsed="1.403962"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:17:54.733148" level="INFO">Opening url 'http://panel.uat.superfoodapp.id/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:17:54.732874" elapsed="8.813770"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.546979" elapsed="0.038232"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.585541" elapsed="0.023910"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:03.620844" level="INFO">Current page contains text 'Welcome Back SuperSquad!'.</msg>
+<arg>Welcome Back SuperSquad!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.609752" elapsed="0.011369"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:03.625542" level="INFO">Page title is 'SuperFood'.</msg>
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.621380" elapsed="0.004376"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:17:53.326392" elapsed="10.299523"/>
+</kw>
+<kw name="Input Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:03.627077" level="INFO">Typing text 'hi@superfoodapp.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.626818" elapsed="0.090362"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:03.717843" level="INFO">Typing text '5uperF00d!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.717488" elapsed="0.083890"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:03.802046" level="INFO">Clicking button 'css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button'.</msg>
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.801741" elapsed="0.064512"/>
+</kw>
+<arg>${INVALID_EMAIL}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-08-14T14:18:03.626412" elapsed="0.240077"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=/html/body/section/ol/li/div[2]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T14:18:03.866907" elapsed="0.836829"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:04.720773" level="INFO">Element 'xpath=/html/body/section/ol/li/div[2]' contains text 'Oops! Request Failed'.</msg>
+<arg>xpath=/html/body/section/ol/li/div[2]</arg>
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-08-14T14:18:04.704269" elapsed="0.016793"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T14:18:04.721587" elapsed="2.093714"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:17:53.325745" elapsed="13.490327"/>
+</test>
+<test id="s1-t3" name="TC03 - Invalid Password" line="49">
+<kw name="Open Browser To SuperFood Landing Page" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T14:18:06.818595" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7A6E76490&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T14:18:06.818220" elapsed="0.000525"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:18:06.818911" elapsed="0.000206"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:18:06.819267" elapsed="0.000187"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:18:06.819577" elapsed="0.000152"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:06.820050" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T14:18:06.819856" elapsed="1.414877"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:08.235401" level="INFO">Opening url 'http://panel.uat.superfoodapp.id/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:18:08.235050" elapsed="43.553184"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T14:18:51.788592" elapsed="0.023379"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T14:18:51.812271" elapsed="0.020857"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:51.843571" level="INFO">Current page contains text 'Welcome Back SuperSquad!'.</msg>
+<arg>Welcome Back SuperSquad!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T14:18:51.833467" elapsed="0.010349"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:51.848123" level="INFO">Page title is 'SuperFood'.</msg>
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-14T14:18:51.844007" elapsed="0.004547"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:18:06.817886" elapsed="45.030847"/>
+</kw>
+<kw name="Input Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:51.850092" level="INFO">Typing text 'hi@superfoodapp.id' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:18:51.849757" elapsed="0.092807"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:51.943248" level="INFO">Typing text '5uperF00d' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:18:51.942893" elapsed="0.058944"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:52.002476" level="INFO">Clicking button 'css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button'.</msg>
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:18:52.002183" elapsed="0.063098"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<status status="PASS" start="2025-08-14T14:18:51.849212" elapsed="0.216301"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=/html/body/section/ol/li/div[2]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-08-14T14:18:52.065968" elapsed="1.872159"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:53.956553" level="INFO">Element 'xpath=/html/body/section/ol/li/div[2]' contains text 'Oops! Request Failed'.</msg>
+<arg>xpath=/html/body/section/ol/li/div[2]</arg>
+<arg>${ERROR_MESSAGE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-08-14T14:18:53.938787" elapsed="0.018054"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T14:18:53.957614" elapsed="2.133658"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:18:06.817207" elapsed="49.275122"/>
+</test>
+<test id="s1-t4" name="TC04 - Empty Username" line="54">
+<kw name="Open Browser To SuperFood Landing Page" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T14:18:56.094712" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7A6E8F820&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T14:18:56.094364" elapsed="0.000499"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:18:56.095010" elapsed="0.000194"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:18:56.095335" elapsed="0.000163"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:18:56.095622" elapsed="0.000157"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:56.096115" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T14:18:56.095921" elapsed="1.362987"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:18:57.459468" level="INFO">Opening url 'http://panel.uat.superfoodapp.id/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:18:57.459218" elapsed="50.402904"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T14:19:47.862494" elapsed="0.023131"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T14:19:47.886011" elapsed="0.022029"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:47.922105" level="INFO">Current page contains text 'Welcome Back SuperSquad!'.</msg>
+<arg>Welcome Back SuperSquad!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T14:19:47.908409" elapsed="0.014000"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:47.927683" level="INFO">Page title is 'SuperFood'.</msg>
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-14T14:19:47.922678" elapsed="0.005290"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:18:56.094046" elapsed="51.834129"/>
+</kw>
+<kw name="Input Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:47.930240" level="INFO">Typing text '' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:19:47.929907" elapsed="0.076195"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:48.006862" level="INFO">Typing text '5uperF00d!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:19:48.006454" elapsed="0.072423"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:48.079641" level="INFO">Clicking button 'css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button'.</msg>
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:19:48.079274" elapsed="0.075437"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-08-14T14:19:47.928743" elapsed="0.226278"/>
+</kw>
+<kw name="Get Property" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:48.168051" level="INFO">${validation_message} = Please fill out this field.</msg>
+<var>${validation_message}</var>
+<arg>id=email</arg>
+<arg>validationMessage</arg>
+<doc>Returns the value of ``property`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:19:48.155662" elapsed="0.012598"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${validation_message}</arg>
+<arg>Please fill out this field.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-14T14:19:48.168825" elapsed="0.000587"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T14:19:48.170329" elapsed="2.111661"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:18:56.093316" elapsed="54.189235"/>
+</test>
+<test id="s1-t5" name="TC05 - Empty Password" line="60">
+<kw name="Open Browser To SuperFood Landing Page" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T14:19:50.285526" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7A6E8F6F0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T14:19:50.285029" elapsed="0.000741"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:19:50.286084" elapsed="0.000396"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:19:50.286775" elapsed="0.000380"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:19:50.287390" elapsed="0.000295"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:50.288333" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T14:19:50.287952" elapsed="1.450602"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:51.739180" level="INFO">Opening url 'http://panel.uat.superfoodapp.id/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:19:51.738901" elapsed="8.079607"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T14:19:59.818842" elapsed="0.029032"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T14:19:59.848262" elapsed="0.023045"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:59.885193" level="INFO">Current page contains text 'Welcome Back SuperSquad!'.</msg>
+<arg>Welcome Back SuperSquad!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T14:19:59.871599" elapsed="0.013853"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:59.890963" level="INFO">Page title is 'SuperFood'.</msg>
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-14T14:19:59.885653" elapsed="0.005531"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:19:50.284588" elapsed="9.606751"/>
+</kw>
+<kw name="Input Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:19:59.893865" level="INFO">Typing text 'hi@superfoodapp.id' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:19:59.893291" elapsed="0.147396"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:00.041604" level="INFO">Typing text '' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:00.041093" elapsed="0.074955"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:00.116720" level="INFO">Clicking button 'css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button'.</msg>
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:00.116390" elapsed="0.090172"/>
+</kw>
+<arg>${VALID_EMAIL}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-08-14T14:19:59.891915" elapsed="0.315030"/>
+</kw>
+<kw name="Get Property" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:00.221270" level="INFO">${validation_message} = Please fill out this field.</msg>
+<var>${validation_message}</var>
+<arg>id=password</arg>
+<arg>validationMessage</arg>
+<doc>Returns the value of ``property`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:00.207563" elapsed="0.013992"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${validation_message}</arg>
+<arg>Please fill out this field.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-14T14:20:00.222220" elapsed="0.000484"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T14:20:00.223374" elapsed="2.130222"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:19:50.283813" elapsed="12.070281"/>
+</test>
+<test id="s1-t6" name="TC06 - Empty Username and Password" line="66">
+<kw name="Open Browser To SuperFood Landing Page" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-14T14:20:02.356678" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002A7A7F78050&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>modules=sys,selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-14T14:20:02.356158" elapsed="0.000718"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:20:02.357103" elapsed="0.000271"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:20:02.358009" elapsed="0.000467"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-08-14T14:20:02.358853" elapsed="0.000381"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:02.359911" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-08-14T14:20:02.359542" elapsed="1.449155"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:03.809305" level="INFO">Opening url 'http://panel.uat.superfoodapp.id/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-08-14T14:20:03.809027" elapsed="19.986039"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.795452" elapsed="0.019595"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.815361" elapsed="0.021882"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:23.849587" level="INFO">Current page contains text 'Welcome Back SuperSquad!'.</msg>
+<arg>Welcome Back SuperSquad!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.837584" elapsed="0.012300"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:23.855195" level="INFO">Page title is 'SuperFood'.</msg>
+<arg>${LOGIN_PAGE_TITLE}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.850081" elapsed="0.005411"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:20:02.355709" elapsed="21.499965"/>
+</kw>
+<kw name="Input Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:23.858029" level="INFO">Typing text '' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.857626" elapsed="0.078437"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:23.936927" level="INFO">Typing text '' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.936455" elapsed="0.063148"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:24.000335" level="INFO">Clicking button 'css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button'.</msg>
+<arg>css=body &gt; div.flex.flex-row.min-h-screen.bg-white &gt; div.flex.min-h-full.flex-1.flex-col.justify-center.px-16.items-center.relative &gt; div.w-full.max-w-lg &gt; div.w-full.mt-14 &gt; form &gt; div.flex.items-center.gap-7 &gt; button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:23.999977" elapsed="0.069505"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2025-08-14T14:20:23.856241" elapsed="0.213551"/>
+</kw>
+<kw name="Get Property" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:24.083717" level="INFO">${validation_message} = Please fill out this field.</msg>
+<var>${validation_message}</var>
+<arg>id=email</arg>
+<arg>validationMessage</arg>
+<doc>Returns the value of ``property`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:24.070321" elapsed="0.013622"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${validation_message}</arg>
+<arg>Please fill out this field.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-14T14:20:24.084492" elapsed="0.000322"/>
+</kw>
+<kw name="Get Property" owner="SeleniumLibrary">
+<msg time="2025-08-14T14:20:24.097330" level="INFO">${validation_message} = Please fill out this field.</msg>
+<var>${validation_message}</var>
+<arg>id=password</arg>
+<arg>validationMessage</arg>
+<doc>Returns the value of ``property`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-08-14T14:20:24.085433" elapsed="0.012102"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${validation_message}</arg>
+<arg>Please fill out this field.</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-08-14T14:20:24.097990" elapsed="0.000281"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-14T14:20:29.099113" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-14T14:20:24.098678" elapsed="5.000746"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-08-14T14:20:29.100118" elapsed="2.124410"/>
+</kw>
+<status status="PASS" start="2025-08-14T14:20:02.354987" elapsed="28.870013"/>
+</test>
+<status status="PASS" start="2025-08-14T14:16:49.380119" elapsed="221.845917"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Panel Sf" id="s1" pass="6" fail="0" skip="0">Login Panel Sf</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-08-14T14:16:49.576510" level="WARN">Imported resource file 'c:\Users\sudar\Documents\Orange-HRM\resources\common_keywords.robot' is empty.</msg>
+</errors>
+</robot>
